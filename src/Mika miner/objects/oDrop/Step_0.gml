@@ -3,27 +3,34 @@ vertical_speed = vertical_speed + vertical_acceleration
 
 //movement
 if (place_meeting(x + horizontal_speed, y, oWall)) {
-	if (horizontal_speed > 0) {
-		horizontal_propulsion = 0
+	var horizontal_bounce = 0.4
+	if place_meeting(x + horizontal_speed, y, oBouncy) horizontal_bounce = 0.8
+	if (abs(horizontal_speed) > bounce_threshold) {
+		horizontal_speed = horizontal_speed*horizontal_bounce * -1
 	}
-	while (abs(horizontal_speed) > 0.1) {
-		horizontal_speed *= 0.5;
-		if (!place_meeting(x + horizontal_speed, y, oWall)) x += horizontal_speed;
+	else {
+		while (abs(horizontal_speed) > 0.1) {
+			horizontal_speed *= 0.5;
+			if (!place_meeting(x + horizontal_speed, y, oWall)) x += horizontal_speed;
+		}
+		horizontal_speed = 0;
 	}
-	horizontal_speed = 0;
 }
 x += horizontal_speed;
 
 if (place_meeting(x, y + vertical_speed, oWall)){
-	if (vertical_speed > 0) {
-		can_jump = 10;
-		horizontal_propulsion = 0
+	var vertical_bounce = 0.2
+	if place_meeting(x, y + vertical_speed, oBouncy) vertical_bounce = 0.5
+	if (abs(vertical_speed) > bounce_threshold) {
+		vertical_speed = vertical_speed*vertical_bounce * -1
 	}
-	while (abs(vertical_speed) > 0.1) {
-		vertical_speed *= 0.5;
-		if (!place_meeting(x, y +vertical_speed, oWall)) y += vertical_speed;
+	else {
+		while (abs(vertical_speed) > 0.1) {
+			vertical_speed *= 0.5;
+			if (!place_meeting(x, y +vertical_speed, oWall)) y += vertical_speed;
+		}
+		vertical_speed = 0;
+		horizontal_speed = 0
 	}
-	vertical_speed = 0;
-	horizontal_speed = 0
 }
 y += vertical_speed;

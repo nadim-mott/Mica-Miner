@@ -3,6 +3,10 @@ if (follow2 != noone and (follow != noone)) {
 	var room_strengthy = 20
 	x_to = ((follow.x + (cam_width*0.5)) * room_strengthx + follow2.x) / (room_strengthx + 1)
 	y_to = ((follow.y + (cam_height*0.5)) * room_strengthy + follow2.y) / (room_strengthy + 1)
+	if follow2.health_point <= 0 {
+		follow2 = noone
+		//todo find a better system to find a new follow 2
+	}
 } else if (follow != noone) {
 	x_to = follow.x + (cam_width*0.5);
 	y_to = follow.y + (cam_height*0.5);

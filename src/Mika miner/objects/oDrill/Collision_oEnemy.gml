@@ -3,7 +3,7 @@
 if player.input_dig {
 	knockback_player(0.8)
 	with (other) {
-		respond_to_knockback(other.id, other.player)
+		respond_to_knockback(other.image_angle)
 	}
 
 }

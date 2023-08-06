@@ -14,6 +14,7 @@ oCamera.follow = current_hall //todo make this only update when the hall is upda
 
 for (var i = 0; i < array_length(oPlayerTracker.players); i ++) {
 	var player = oPlayerTracker.players[i]
+	if (player.health_point <= 0) continue;
 	//dropping below:
 	if (player.y >= current_hall.yy) {
 		dead_end_left = false

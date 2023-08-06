@@ -1,7 +1,26 @@
-if sprite_index == sPlayerStand {
-	draw_sprite_ext(sPlayerStandVest, image_index,x,y,image_xscale,image_yscale,image_angle,color,1)
-} else if sprite_index == sPlayerWalk {
-	draw_sprite_ext(sPlayerWalkVest, image_index,x,y,image_xscale,image_yscale,image_angle,color,1)
+if (hit_cooldown % 10 == 0) and hit_cooldown != 0 {
+	image_alpha = 0.2
+} else {
+	image_alpha = 1
+}
+draw_self()
+
+switch (sprite_index){
+	case sPlayerJump:
+		var vest = sPlayerJumpVest
+		break;
+	case sPlayerWalk:
+		vest = sPlayerWalkVest
+		break;
+	case sPlayerFall:
+		vest = sPlayerFallVest
+		break;
+	case sPlayerHurt:
+		vest = sPlayerHurtVest
+		break;
+	default:
+		vest = sPlayerStandVest
+	
 }
 
-draw_self()
+draw_sprite_ext(vest, image_index,x,y,image_xscale,image_yscale,image_angle,color,image_alpha)

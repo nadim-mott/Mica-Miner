@@ -9,7 +9,12 @@ switch (input_medium) {
 		var input_jump = keyboard_check_pressed(vk_space);
 		var input_jump_held = keyboard_check(vk_space)
 		input_grab = keyboard_check_pressed(ord("Q"))
-		input_dig = mouse_check_button(mb_left);
+		if mouse_check_button_pressed(mb_left) {
+			input_dig = true
+		} else if mouse_check_button_released(mb_left){
+			input_dig = false
+		}
+
 		input_joystick_h = 0
 		input_joystick_v = 0
 	break;
@@ -21,7 +26,11 @@ switch (input_medium) {
 		input_jump = gamepad_button_check_pressed(input_medium, gp_face1) or gamepad_button_check_pressed(input_medium, gp_shoulderr);
 		input_jump_held = gamepad_button_check(input_medium, gp_face1) or gamepad_button_check(input_medium, gp_shoulderr);
 		input_grab = gamepad_button_check_pressed(input_medium, gp_face2)
-		input_dig = gamepad_button_check(input_medium, gp_shoulderlb);
+		if gamepad_button_check_pressed(input_medium, gp_shoulderlb) {
+			input_dig = true
+		} else if gamepad_button_check_released(input_medium, gp_shoulderlb){
+			input_dig = false
+		}
 		input_joystick_h = gamepad_axis_value(input_medium, gp_axisrh)* (0.1 < abs(gamepad_axis_value(input_medium, gp_axisrh)))
 		input_joystick_v = gamepad_axis_value(input_medium, gp_axisrv)* (0.1 < abs(gamepad_axis_value(input_medium, gp_axisrv)))
 	break;
@@ -33,11 +42,25 @@ if (input_right - input_left + hitting_direction) != 0 {
 	horizontal_propulsion = 0
 } else {
 	horizontal_speed = horizontal_propulsion
-	sprite_index = sPlayerStand
 } 
-if (input_right - input_left) != 0 {
-	image_xscale = sign(input_right - input_left)
-	sprite_index = sPlayerWalk
+
+// figure out sprite
+if (input_right - input_left) != 0{
+	if grabbed == noone {
+		image_xscale = sign(input_right - input_left)
+	}
+	if can_jump == 10 {
+		sprite_index = sPlayerWalk
+	}
+}
+if hit_cooldown != 0 {
+	sprite_index = sPlayerHurt
+} else if vertical_speed < 0 and jumped{
+	sprite_index = sPlayerJump
+} else if vertical_speed != 0{
+	sprite_index = sPlayerFall
+} else {
+	sprite_index = sPlayerStand
 }
 	
 
@@ -62,7 +85,7 @@ if (!input_jump_held and jumped) {
 
 //Collide and Move
 if (place_meeting(x + horizontal_speed, y, oWall)) {
-	if (horizontal_speed > 0) {
+	if (abs(horizontal_speed) > 0) {
 		horizontal_propulsion = 0
 	}
 	while (abs(horizontal_speed) > 0.1) {
@@ -88,24 +111,32 @@ if (place_meeting(x, y + vertical_speed, oWall)){
 y += vertical_speed;
 
 if health_point <= 0 {
-	array_remove_value(oPlayerTracker.players, id)
-	array_remove_value(oPlayerTracker.pads_connected, input_medium)
-	if input_medium == "keyboard" {
-		oPlayerTracker.keyboard_player_added = false;
-	}
+	//array_remove_value(oPlayerTracker.players, id)
+	//array_remove_value(oPlayerTracker.pads_connected, input_medium)
+	//if input_medium == "keyboard" {
+	//	oPlayerTracker.keyboard_player_added = false;
+	//}
+	instance_create_layer(x,y,"players", oDead,{
+		vertical_speed: -5,
+		horizontal_speed: image_xscale * -5,
+		color: color
+		
+		
+	})
 	instance_destroy(drill)
-	instance_destroy()
+	instance_deactivate_object(self)
 	
 }
 
 // grabbable 
-if grabbed != noone {
-	if input_grab {
-		input_grab = false
-		instance_activate_object(drill)
-		grabbed.player = noone
-		grabbed.horizontal_speed = horizontal_speed
-		grabbed = noone
+//if grabbed != noone {
+//	if input_grab {
+//		input_grab = false
+//		instance_activate_object(drill)
+//		grabbed.player = noone
+//		grabbed.horizontal_speed = horizontal_speed
+//		grabbed.vertical_speed = vertical_speed
+//		grabbed = noone
 		
-	}
-}
+//	}
+//}

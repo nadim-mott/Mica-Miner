@@ -10,8 +10,9 @@ for (var i = 0; i< array_length(players); i++) {
 	var canvas_y_pos = 10
 	var border = 8
 	draw_sprite_ext(sCanvas, 0, canvas_x_pos, canvas_y_pos, 1, 1, 0, player.color, 1)
-	draw_sprite_part_ext(sPlayerStandVest,0,0,0, (canvas_width - (border * 2)) / player_scale, (canvas_height - (border * 2)) / player_scale,player_x, canvas_y_pos + border, player_scale, player_scale, player.color, 1)
-	draw_sprite_part_ext(sPlayerStand,0,0,0, (canvas_width - (border * 2)) / player_scale, (canvas_height - (border * 2)) / player_scale,player_x, canvas_y_pos + border, player_scale, player_scale, c_white, 1)
+	draw_sprite_part_ext(sPlayerStand,0,0,0, (canvas_width - (border * 2)) / player_scale, (canvas_height - (border * 2) + 15) / player_scale,player_x, canvas_y_pos + border - 15, player_scale, player_scale, c_white, 1)
+	draw_sprite_part_ext(sPlayerStandVest,0,0,0, (canvas_width - (border * 2)) / player_scale, (canvas_height - (border * 2) + 15) / player_scale,player_x, canvas_y_pos + border - 15, player_scale, player_scale, player.color, 1)
+	
 	//mika
 	draw_set_font(fntUndo)
 	var fnt_size = font_get_size(fntUndo)

@@ -5,9 +5,9 @@ enum PHASE {
 	ATTACKING
 }
 current_phase = PHASE.CHILLING
-function respond_to_knockback(drill, player) {
-		knockback_y = lengthdir_y(6, drill.image_angle)
-		knockback_x = lengthdir_x(6, drill.image_angle)
+function respond_to_knockback(angle) {
+		knockback_y = lengthdir_y(6, angle)
+		knockback_x = lengthdir_x(6, angle)
 		knockback_count = 2
 		if hit_cooldown <= 0 {
 			health_point -= 1

@@ -12,25 +12,36 @@ if player == noone {
 		dir = point_direction(0,0, player.input_joystick_h, player.input_joystick_v)
 	}
 	image_index = 1
-	var dis_from_player = 16
+	var dis_from_player = -16
 	x = player.x + lengthdir_x(dis_from_player, dir)
 	y = player.y + lengthdir_y(dis_from_player, dir)
+	player.image_xscale = sign(player.x - x)
 	image_xscale = -1 * player.image_xscale
 	
 	//dropping:
 	if player.input_dig {
+		player.input_dig = false
 		instance_activate_object(player.drill)
 		//todo prevent the drill from teleporting
 		player.grabbed = noone
 		horizontal_speed = lengthdir_x(throwing_strength, dir)
 		vertical_speed = lengthdir_y(throwing_strength,dir)
 		player = noone
-	} else if player.input_grab {
-		instance_activate_object(player.drill)
-		//todo prevent the drill from teleporting
-		player.grabbed = noone
-		horizontal_speed = player.horizontal_speed
-		player = noone
+	} else {
+		with (player) {
+			if grabbed != noone {
+				if input_grab {
+					input_grab = false
+					instance_activate_object(drill)
+					grabbed.player = noone
+					grabbed.horizontal_speed = horizontal_speed
+					grabbed.vertical_speed = vertical_speed
+					grabbed = noone
+		
+				}
+			}
+			
+		}
+		
 	}
-	
 }

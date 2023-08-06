@@ -7,4 +7,3 @@
 
 
 draw_sprite(sMikaGliter,mika_frame,x,y)
-
