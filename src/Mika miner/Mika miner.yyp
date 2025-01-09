@@ -93,7 +93,6 @@
     {"id":{"name":"sndSplash","path":"sounds/sndSplash/sndSplash.yy",},},
     {"id":{"name":"sPlayerFallVest","path":"sprites/sPlayerFallVest/sPlayerFallVest.yy",},},
     {"id":{"name":"oHallShop","path":"objects/oHallShop/oHallShop.yy",},},
-    {"id":{"name":"sndRichardDying","path":"sounds/sndRichardDying/sndRichardDying.yy",},},
     {"id":{"name":"oMenuSpreadableWall","path":"objects/oMenuSpreadableWall/oMenuSpreadableWall.yy",},},
     {"id":{"name":"sPlayerJumpVest","path":"sprites/sPlayerJumpVest/sPlayerJumpVest.yy",},},
     {"id":{"name":"scrGrabbable","path":"scripts/scrGrabbable/scrGrabbable.yy",},},

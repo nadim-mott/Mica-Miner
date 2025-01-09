@@ -69,7 +69,6 @@
     {"name":"sndSplash","order":2,"path":"sounds/sndSplash/sndSplash.yy",},
     {"name":"sPlayerFallVest","order":2,"path":"sprites/sPlayerFallVest/sPlayerFallVest.yy",},
     {"name":"oHallShop","order":28,"path":"objects/oHallShop/oHallShop.yy",},
-    {"name":"sndRichardDying","order":5,"path":"sounds/sndRichardDying/sndRichardDying.yy",},
     {"name":"oMenuSpreadableWall","order":33,"path":"objects/oMenuSpreadableWall/oMenuSpreadableWall.yy",},
     {"name":"sPlayerJumpVest","order":6,"path":"sprites/sPlayerJumpVest/sPlayerJumpVest.yy",},
     {"name":"scrGrabbable","order":2,"path":"scripts/scrGrabbable/scrGrabbable.yy",},
