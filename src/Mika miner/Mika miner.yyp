@@ -120,7 +120,7 @@
     {"id":{"name":"oRoomTracker","path":"objects/oRoomTracker/oRoomTracker.yy",},},
     {"id":{"name":"sEnemybit3","path":"sprites/sEnemybit3/sEnemybit3.yy",},},
     {"id":{"name":"sSplashWater","path":"sprites/sSplashWater/sSplashWater.yy",},},
-    {"id":{"name":"sndDying","path":"sounds/sndDying/sndDying.yy",},},
+    {"id":{"name":"sndRichardDying","path":"sounds/sndRichardDying/sndRichardDying.yy",},},
     {"id":{"name":"fntUndo","path":"fonts/fntUndo/fntUndo.yy",},},
     {"id":{"name":"sbreak","path":"sprites/sbreak/sbreak.yy",},},
     {"id":{"name":"oMika","path":"objects/oMika/oMika.yy",},},

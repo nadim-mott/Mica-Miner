@@ -96,7 +96,7 @@
     {"name":"oRoomTracker","order":7,"path":"objects/oRoomTracker/oRoomTracker.yy",},
     {"name":"sEnemybit3","order":2,"path":"sprites/sEnemybit3/sEnemybit3.yy",},
     {"name":"sSplashWater","order":47,"path":"sprites/sSplashWater/sSplashWater.yy",},
-    {"name":"sndDying","order":1,"path":"sounds/sndDying/sndDying.yy",},
+    {"name":"sndRichardDying","order":1,"path":"sounds/sndRichardDying/sndRichardDying.yy",},
     {"name":"sbreak","order":13,"path":"sprites/sbreak/sbreak.yy",},
     {"name":"oMika","order":16,"path":"objects/oMika/oMika.yy",},
     {"name":"sDrillColor","order":43,"path":"sprites/sDrillColor/sDrillColor.yy",},
