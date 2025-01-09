@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sDeadVest",
-  "bbox_bottom": 57,
+  "bbox_bottom": 54,
   "bbox_left": 15,
   "bbox_right": 40,
   "bbox_top": 20,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d44d938-ecf5-4cea-89a9-f23cbb24f3fb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"77ba50fb-03b7-4955-966a-e3f81666ce79",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"500fa622-b9a8-4751-b2a5-ef2edc7431bf",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3eb12b0c-c8a3-44da-b9c7-c657b1c9e454",},
   ],
@@ -56,7 +56,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d44d938-ecf5-4cea-89a9-f23cbb24f3fb","path":"sprites/sDeadVest/sDeadVest.yy",},},},"Disabled":false,"id":"2448e807-5454-4cb6-b517-caa27dffcb2c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"77ba50fb-03b7-4955-966a-e3f81666ce79","path":"sprites/sDeadVest/sDeadVest.yy",},},},"Disabled":false,"id":"76424249-ddc5-4b9c-8cd8-57172eaa09c2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"500fa622-b9a8-4751-b2a5-ef2edc7431bf","path":"sprites/sDeadVest/sDeadVest.yy",},},},"Disabled":false,"id":"60ac1591-69e9-4b99-81c3-db113da3f8e3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3eb12b0c-c8a3-44da-b9c7-c657b1c9e454","path":"sprites/sDeadVest/sDeadVest.yy",},},},"Disabled":false,"id":"12dbda18-a294-4389-818d-ddbb3356e38f","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},

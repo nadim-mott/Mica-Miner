@@ -13,8 +13,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "oDrop",
-    "path": "objects/oDrop/oDrop.yy",
+    "name": "oGrabbable",
+    "path": "objects/oGrabbable/oGrabbable.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

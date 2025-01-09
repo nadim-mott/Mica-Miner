@@ -6,7 +6,11 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oDrop","path":"objects/oDrop/oDrop.yy",},"propertyId":{"name":"bounce_vertical_strength","path":"objects/oDrop/oDrop.yy",},"value":"0.1",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oDrop","path":"objects/oDrop/oDrop.yy",},"propertyId":{"name":"bounce_horizontal_strength","path":"objects/oDrop/oDrop.yy",},"value":"0.2",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oGrabbable","path":"objects/oGrabbable/oGrabbable.yy",},"propertyId":{"name":"throwing_strength","path":"objects/oGrabbable/oGrabbable.yy",},"value":"13",},
+  ],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",

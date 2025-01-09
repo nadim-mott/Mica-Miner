@@ -12,5 +12,5 @@ for (var i = 0; i < gamepad_get_device_count(); i++) {
 }
 
 spawn_x = oRoomTracker.current_hall.x + 325
-spawn_y = oRoomTracker.current_hall.y + 200
+spawn_y = oRoomTracker.current_hall.y + 0
 heart_frame += 0.2

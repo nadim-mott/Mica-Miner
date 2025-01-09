@@ -1,4 +1,4 @@
-if (hit_cooldown % 10 == 0) and hit_cooldown != 0 {
+if (hit_cooldown % 10 >= 5) and hit_cooldown != 0 {
 	image_alpha = 0.2
 } else {
 	image_alpha = 1

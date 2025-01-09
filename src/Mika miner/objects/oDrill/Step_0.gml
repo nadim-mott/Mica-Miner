@@ -6,8 +6,14 @@ if player.input_medium == "keyboard" {
 image_angle = dir
 x = player.x
 y = player.y
+if dir % 360 > 90 and dir % 360 < 270 {
+	image_yscale = -1
+} else {
+	image_yscale = 1
+}
 if player.input_dig {
 	image_speed = 30
+	audio_play_sound(sndBuzz,1,false,,,random_range(0.5,1))
 } else {
 	image_speed = 0
 }

@@ -7,6 +7,7 @@
 
 dir = 0
 player = noone
+player_is_ghost = false
 // Inherit the parent event
 event_inherited();
 

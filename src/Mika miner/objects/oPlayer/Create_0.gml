@@ -10,9 +10,17 @@ input_dig = false
 input_grab = false
 hitting_direction = 0
 jumped = false
+underwater_move_manually = false
 grabbed = noone
+walk_speed = walk_speed_default
+jump_strength = jump_strength_default
+vertical_acceleration = vertical_acceleration_default
 // create drill
 drill = instance_create_layer(x,y, "drill", oDrill,{player: self.id})
+
+
+// Voice information:
+
 
 function update_drill_collisions() {
 	// optimize? Maybe split into several functions
@@ -26,4 +34,16 @@ function update_drill_collisions() {
 		drill_hitting_wall_horizontal = false
 		drill_hitting_wall_vertical = false
 	}
+}
+function take_damage(){
+	if hit_cooldown <=0 {
+		health_point -= 1
+		hit_cooldown = hit_cooldown_max
+		vertical_speed = -2
+	if (health_point != 0) {
+		audio_play_sound(sndGrunt,10,false,,,random_range(0.9,1.2));
+	}else {
+		audio_play_sound(sndRichardDying,10,false,,,random_range(0.9,1.2));
+	}
+}
 }

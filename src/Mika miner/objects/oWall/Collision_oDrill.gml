@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 if other.player.input_dig {
+
 	if breakable {
 		if cool_down <= 0 {
 			
@@ -24,5 +25,11 @@ if other.player.input_dig {
 }
 
 
-
-
+if room == rmMenu {
+	vspeed = oMenu.wall_speed
+	
+}
+if room = rmMenu and y < -32 {
+	instance_destroy()
+	
+}

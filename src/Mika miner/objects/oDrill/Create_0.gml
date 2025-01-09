@@ -1,6 +1,5 @@
 dir = 0
 hitting_wall = false
-image_blend = player.color
 
 function knockback_player(strength) {
 	with (player) {

@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "grabbable",
+    "path": "folders/Sprites/grabbable.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

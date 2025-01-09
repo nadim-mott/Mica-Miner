@@ -1,4 +1,6 @@
 for (var i = 0; i< array_length(players); i++) {
+	draw_set_halign(fa_left)
+	draw_set_valign(fa_top)
 	// canva:
 	var player = players[i]
 	var canvas_width = sprite_get_width(sCanvas)

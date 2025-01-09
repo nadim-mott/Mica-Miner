@@ -31,8 +31,8 @@ switch (input_medium) {
 		} else if gamepad_button_check_released(input_medium, gp_shoulderlb){
 			input_dig = false
 		}
-		input_joystick_h = gamepad_axis_value(input_medium, gp_axisrh)* (0.1 < abs(gamepad_axis_value(input_medium, gp_axisrh)))
-		input_joystick_v = gamepad_axis_value(input_medium, gp_axisrv)* (0.1 < abs(gamepad_axis_value(input_medium, gp_axisrv)))
+		input_joystick_h = gamepad_axis_value(input_medium, gp_axisrh) * (0.05 < abs(gamepad_axis_value(input_medium, gp_axisrh)))
+		input_joystick_v = gamepad_axis_value(input_medium, gp_axisrv) * (0.05 < abs(gamepad_axis_value(input_medium, gp_axisrv)))
 	break;
 }
 
@@ -110,23 +110,65 @@ if (place_meeting(x, y + vertical_speed, oWall)){
 }
 y += vertical_speed;
 
+
+// ---- Dying and taking damage: -----
 if health_point <= 0 {
 	//array_remove_value(oPlayerTracker.players, id)
 	//array_remove_value(oPlayerTracker.pads_connected, input_medium)
 	//if input_medium == "keyboard" {
 	//	oPlayerTracker.keyboard_player_added = false;
 	//}
-	instance_create_layer(x,y,"players", oDead,{
+	create_entity(x,y, oRoomTracker.current_hall, oDead,"grabbables", {
 		vertical_speed: -5,
 		horizontal_speed: image_xscale * -5,
-		color: color
-		
-		
+		color: color,
+		hall: oRoomTracker.current_hall
 	})
+	array_push(oPlayerTracker.dead_players, instance_create_layer(x,y,"players", oGhostPlayer, {
+		color : color,
+		input_medium : input_medium
+	}))
 	instance_destroy(drill)
 	instance_deactivate_object(self)
 	
 }
+
+// ----- interact with liquid: ------ 
+if place_meeting(x,y,oWater) {
+	if in_water = false {
+		if place_meeting(x,y,oLava) {
+			instance_create_layer(x,y, "drill", oSplash, {sprite_index: sSplashLava})
+		} else {
+			instance_create_layer(x,y, "drill", oSplash)
+		}
+		
+	}
+	walk_speed = 3
+	jump_strength = 3
+	vertical_acceleration = 0.05
+	in_water = true
+	can_jump = 10
+	layer_add_instance("players_underwater", id)
+	layer_add_instance("drill_underwater", drill)
+	if (input_down - input_up) != 0{
+		vertical_speed = (input_down - input_up) * walk_speed
+		underwater_move_manually = true
+	}
+	if underwater_move_manually and (input_down - input_up) == 0 {
+		vertical_speed = max(0, vertical_speed)
+		underwater_move_manually = false
+	}
+	
+	
+} else {
+	walk_speed = walk_speed_default
+	jump_strength = jump_strength_default
+	vertical_acceleration = vertical_acceleration_default
+	in_water = false
+	layer_add_instance("players", id)
+	layer_add_instance("drill", drill)
+}
+
 
 // grabbable 
 //if grabbed != noone {
